@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+.docker/
+
+# Python cache & env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.env
+.venv
+venv/
+
+# OS files
+*.DS_Store
+*.swp
+*.swo
+
+# IDE/editor config
+.vscode/
+.idea/
+*.log
+
+# Tests, coverage, and local state
+.coverage
+.pytest_cache/
+htmlcov/
+*.sqlite3
+
+# App-specific (optional)
+*.db
+.env.local
