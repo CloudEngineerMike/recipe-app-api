@@ -1,32 +1,32 @@
-services: 
+services:
   app:
     build:
       context: .
       args:
-        DEV: "true"
-    ports:
-      - "8000:8000"
+        DEV: "false"  # overridden in override file for dev
     volumes:
       - ./app:/app
+    ports:
+      - "8000:8000"
     environment:
       PYTHONUNBUFFERED: 1
       DB_HOST: db
       DB_NAME: devdb
       DB_USER: devuser
       DB_PASS: changeme
-    command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
 
   db:
     image: postgres:15.13-alpine3.20
-    volumes: 
+    volumes:
       - dev-db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: devuser
       POSTGRES_PASSWORD: changeme
       POSTGRES_DB: devdb
 
-volumes: 
+volumes:
   dev-db-data:

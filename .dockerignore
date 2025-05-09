@@ -38,3 +38,11 @@ htmlcov/
 # App-specific (optional)
 *.db
 .env.local
+
+# Local configuration files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+*.sqlite3
