@@ -24,7 +24,9 @@ jobs:
         run: sleep 5
 
       - name: Run Tests
-        run: docker compose exec -T app python manage.py test
+        run: |
+          docker compose exec -T app python manage.py wait_for_db
+          docker compose exec -T app python manage.py test --no-input
 
       - name: Run Flake8 Lint
         run: docker compose exec -T app flake8
