@@ -17,8 +17,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and start containers
-        run: docker compose up -d --build
+      - name: Build and start containers (override app command)
+        run: docker compose up -d --build --no-deps app db
 
       - name: Show container logs (debug)
         run: docker compose logs app
