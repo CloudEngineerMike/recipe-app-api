@@ -6,4 +6,4 @@ services:
         DEV: "true"
     environment:
       DJANGO_DEBUG: 1
-    command: sleep infinity
+    #  command: sleep infinity
